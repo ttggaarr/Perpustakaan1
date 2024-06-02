@@ -1,0 +1,28 @@
+{
+    "name": "lenovo/login",
+    "description": "A simple login system",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lenovo\\Login\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ttggaarr",
+            "email": "tgrwrwn31@gmail.com"
+        }
+    ],
+    "scripts": {
+        "lint": "php -l koneksi.php",
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5"
+    }
+}

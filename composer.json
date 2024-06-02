@@ -3,15 +3,27 @@
     "description": "perpustakaan oke",
     "type": "library",
     "require-dev": {
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7.0",
+        "phpunit/phpunit": "9.5"
     },
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lenovo\\Login\\": "src/"
+        }
+    },
+    "scripts": {
+        "lint": "php -l koneksi.php",
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
     "authors": [
         {
             "name": "ttggaarr",
             "email": "tgrwrwn31@gmail.com"
         }
-    ],
-    "minimum-stability": "stable",
-    "require": {}
+    ]
 }

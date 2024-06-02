@@ -35,10 +35,10 @@
 	        <select class="form-control" name="nama">
 	        	<option>== Pilih ==</option>
 	            <?php 
-					$query = $koneksi->query("SELECT * FROM tb_anggota ORDER by nis");
+					$query = $koneksi->query("SELECT * FROM tb_anggota ORDER by nim");
 					
 					while ($nama=$query->fetch_assoc()) {
-						echo "<option value='$nama[nis].$nama[nama]'>$nama[nis] - $nama[nama]</option>";
+						echo "<option value='$nama[nim].$nama[nama]'>$nama[nim] - $nama[nama]</option>";
 					}
 					
 				
@@ -109,7 +109,7 @@ if (isset($_POST['simpan']))
 			$sisa=$hasil['jumlah_buku'];
 
 			//cek data yang duplikate
-			$cek=$koneksi->query("SELECT * FROM tb_transaksi WHERE nis=$id_siswa AND id_buku=$id_buku");
+			$cek=$koneksi->query("SELECT * FROM tb_transaksi WHERE nim=$id_siswa AND id_buku=$id_buku");
 			$num1 = mysqli_num_rows($cek);
 
 			//cek buku

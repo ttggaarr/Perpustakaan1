@@ -1,8 +1,8 @@
 <script type="text/javascript">
     function validasi(form){
-        if (form.nis.value=="") {
-            alert("NIS Tidak Boleh Kosong");
-            form.nis.focus();
+        if (form.nim.value=="") {
+            alert("NIM Tidak Boleh Kosong");
+            form.nim.focus();
             return(false);
         }if (form.nama.value=="") {
             alert("Nama Tidak Boleh Kosng");
@@ -35,8 +35,8 @@
             
             <form method="POST" onsubmit="return validasi(this)">
                 <div class="form-group">
-                    <label>NIS</label>
-                    <input class="form-control" name="nis" id="nis" />
+                    <label>NIM</label>
+                    <input class="form-control" name="nim" id="nim" />
                     
                 </div>
 
@@ -74,12 +74,12 @@
                     <label> Kelas</label>
                     <select class="form-control" name="kelas">
                         <option> == Pilih Kelas ==</option>
-                        <option value="I">I</option>
-                        <option value="II">II</option>
-                        <option value="III">III</option>
-                        <option value="IV">IV</option>
-                        <option value="V">V</option>
-                        <option value="VI">VI</option>
+                        <option value="if1">IF 1</option>
+                        <option value="if2">IF 2</option>
+                        <option value="if3">IF 3</option>
+                        <option value="if4">IF 4</option>
+                        <option value="if5">IF 5</option>
+                        <option value="if6">IF 6</option>
                     </select>
                 </div>
 
@@ -98,7 +98,7 @@
 
  <?php
 
- 	$nis = $_POST ['nis'];
+ 	$nim = $_POST ['nim'];
  	$nama = $_POST ['nama'];
  	$tmpt_lahir = $_POST ['tmpt_lahir'];
  	$tgl_lahir = $_POST ['tgl_lahir'];
@@ -110,7 +110,7 @@
 
  	if ($simpan) {
  		
- 		$sql = $koneksi->query("insert into tb_anggota (nis, nama, tempat_lahir, tgl_lahir, jk, kelas )values('$nis', '$nama', '$tmpt_lahir', '$tgl_lahir', '$jk', '$kelas')");
+ 		$sql = $koneksi->query("insert into tb_anggota (nim, nama, tempat_lahir, tgl_lahir, jk, kelas )values('$nim', '$nama', '$tmpt_lahir', '$tgl_lahir', '$jk', '$kelas')");
 
  		if ($sql) {
  			?>

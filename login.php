@@ -78,7 +78,7 @@ if (isset($_SESSION['admin']) || isset($_SESSION['user'])) {
                     <div class="row text-center">
                         <div class="col-md-12">
                             <br /><br />
-                            <h2> LOGIN</h2>
+                            <h2> Selamat Datang</h2>
                             <br />
                         </div>
                         <div class="login-image">
@@ -102,6 +102,9 @@ if (isset($_SESSION['admin']) || isset($_SESSION['user'])) {
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-primary btn-block" name="login" value="Login" />
+                                </div>
+                                <div class="form-group">
+                                    <a href="register.php" class="btn btn-success btn-block">Register</a>
                                 </div>
                             </form>
                         </div>

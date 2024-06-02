@@ -104,15 +104,16 @@
 
  <?php
 
- 	$judul = $_POST ['judul'];
- 	$pengarang = $_POST ['pengarang'];
- 	$penerbit = $_POST ['penerbit'];
- 	$tahun = $_POST ['tahun'];
- 	$isbn = $_POST ['isbn'];
- 	$jumlah = $_POST ['jumlah'];
- 	$lokasi = $_POST ['lokasi'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $judul = isset($_POST['judul']) ? $_POST['judul'] : '';
+    $pengarang = isset($_POST['pengarang']) ? $_POST['pengarang'] : '';
+    $penerbit = isset($_POST['penerbit']) ? $_POST['penerbit'] : '';
+    $tahun = isset($_POST['tahun']) ? $_POST['tahun'] : '';
+    $isbn = isset($_POST['isbn']) ? $_POST['isbn'] : '';
+    $jumlah = isset($_POST['jumlah']) ? $_POST['jumlah'] : '';
+    $lokasi = isset($_POST['lokasi']) ? $_POST['lokasi'] : '';
 
- 	$simpan = $_POST ['simpan'];
+    $simpan = isset($_POST['simpan']) ? $_POST['simpan'] : '';
 
 
  	if ($simpan) {
@@ -131,6 +132,7 @@
  			<?php
  		}
  	}
+}
 
  ?>
                              

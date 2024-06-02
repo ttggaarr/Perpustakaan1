@@ -1,8 +1,8 @@
 <?php
 	
-	$nis = $_GET ['id'];
+	$nim = $_GET ['id'];
 
-	$koneksi->query("delete from tb_anggota where nis ='$nis'");
+	$koneksi->query("delete from tb_anggota where nim ='$nim'");
 
 ?>
 

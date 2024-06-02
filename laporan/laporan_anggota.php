@@ -21,7 +21,7 @@ $content ='
 <table border="1px" class="tabel"  >
 <tr>
 <th>No </th>
-<th>NIS</th>
+<th>NIM</th>
 <th>Nama</th>
 <th>Tempat Lahir</th>
 <th>Tanggal Lahir</th>
@@ -46,7 +46,7 @@ if (isset($_POST['cetak'])) {
 	$content .='
 		<tr>
 			<td align="center">'.$no++.'</td>
-			<td align="center">'.$tampil['nis'].'</td>
+			<td align="center">'.$tampil['nim'].'</td>
 			<td align="center">'.$tampil['nama'].'</td>
 			<td align="center">'.$tampil['tempat_lahir'].'</td>
 			<td align="center">'.$tampil['tgl_lahir'].'</td>
@@ -65,7 +65,7 @@ while ($tampil=$sql->fetch_assoc()) {
 	$content .='
 		<tr>
 			<td align="center">'.$no++.'</td>
-			<td align="center">'.$tampil['nis'].'</td>
+			<td align="center">'.$tampil['nim'].'</td>
 			<td align="center">'.$tampil['nama'].'</td>
 			<td align="center">'.$tampil['tempat_lahir'].'</td>
 			<td align="center">'.$tampil['tgl_lahir'].'</td>

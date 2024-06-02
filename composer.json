@@ -1,0 +1,17 @@
+{
+    "name": "lenovo/perpustakaan",
+    "description": "perpustakaan oke",
+    "type": "library",
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ttggaarr",
+            "email": "tgrwrwn31@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

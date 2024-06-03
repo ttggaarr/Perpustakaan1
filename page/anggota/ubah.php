@@ -37,10 +37,10 @@
                     </div>
                     <div class="form-group">
                         <label>Jenis Kelamin</label><br/>
-                        <label class="checkbox-inline">
+                        <label class="radio-inline">
                             <input type="radio" value="l" name="jk" <?php echo ($tampil && $jkl == 'l') ? "checked" : ""; ?>/> Laki-laki
                         </label>
-                        <label class="checkbox-inline">
+                        <label class="radio-inline">
                             <input type="radio" value="p" name="jk" <?php echo ($tampil && $jkl == 'p') ? "checked" : ""; ?>/> Perempuan
                         </label>
                     </div>

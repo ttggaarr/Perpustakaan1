@@ -33,7 +33,8 @@
 
                             if ($sql->num_rows > 0) {
                                 while ($data = $sql->fetch_assoc()) {
-                                    $jk = ($data['jk'] == 'l') ? "Laki-laki" : "Wanita";
+                                    $jk = ($data['jk'] == 'l') ? "Perempuan" : "Laki-laki";
+
                             ?>
                                     <tr>
                                         <td><?php echo $no++; ?></td>

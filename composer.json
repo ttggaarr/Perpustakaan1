@@ -14,7 +14,7 @@
     },
     "scripts": {
         "lint": "php -l koneksi.php",
-        "test": "phpunit"
+        "test": "vendor/bin/phpunit"
     },
     "minimum-stability": "stable",
     "require": {

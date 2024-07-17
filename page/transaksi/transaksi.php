@@ -1,3 +1,25 @@
+<?php
+include "koneksi.php"; // Sesuaikan dengan path file koneksi Anda
+
+if (isset($_GET['aksi'])) {
+    $aksi = $_GET['aksi'];
+
+    if ($aksi == "hapus") {
+        $id = $_GET['id'];
+        $query = $koneksi->query("DELETE FROM tb_transaksi WHERE id='$id'");
+
+        if ($query) {
+            echo "<script>alert('Data berhasil dihapus');</script>";
+            echo "<meta http-equiv='refresh' content='0; url=?page=transaksi'>";
+        } else {
+            echo "<script>alert('Data gagal dihapus');</script>";
+        }
+    } elseif ($aksi == "edit") {
+        $id = $_GET['id'];
+        include "detail.php"; // Pastikan path ini benar
+    }
+} else {
+?>
 <div class="row">
     <div class="col-md-12">
         <!-- Advanced Tables -->
@@ -25,29 +47,17 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             <?php
-
                                 $no = 1;
-                                $sql = $koneksi->query("SELECT * FROM tb_transaksi WHERE status='pinjam'");
+                                $sql = $koneksi->query("SELECT * FROM tb_transaksi WHERE status='Pinjam'");
 
                                 while ($data = $sql->fetch_assoc()) {
-                                    $id_buku = $data['id_buku'];
-                                    $nim = $data['nim'];
-                                    
-                                    $jbuku = $koneksi->query("SELECT * FROM tb_buku WHERE id_buku='$id_buku'");
-                                    $jjbuku = $jbuku->fetch_assoc();
-
-                                    $anggotaa = $koneksi->query("SELECT * FROM tb_anggota WHERE nim='$nim'");
-                                    $show = $anggotaa->fetch_assoc();
-
                             ?>
-
                             <tr>
                                 <td><?php echo $no++; ?></td>
-                                <td><?php echo $jjbuku['judul']; ?></td>
-                                <td><?php echo $show['nim']; ?></td>
-                                <td><?php echo $show['nama']; ?></td>
+                                <td><?php echo $data['judul']; ?></td>
+                                <td><?php echo $data['nim']; ?></td>
+                                <td><?php echo $data['nama']; ?></td>
                                 <td><?php echo $data['tgl_pinjam']; ?></td>
                                 <td><?php echo $data['tgl_kembali']; ?></td>
                                 <td><?php echo $data['status']; ?></td>
@@ -65,8 +75,8 @@
                                     ?>
                                 </td>
                                 <td>
-                                    <a href="?page=transaksi&aksi=kembali&id=<?php echo $data['id']; ?>&judul=<?php echo $jjbuku['judul']; ?>" class="btn btn-info">Kembali</a>
-                                    <a href="?page=transaksi&aksi=perpanjang&id=<?php echo $data['id']; ?>&judul=<?php echo $jjbuku['judul']; ?>&tgl_kembali=<?php echo $data['tgl_kembali']; ?>&lambat=<?php echo $lambat; ?>" class="btn btn-danger">Perpanjang</a>
+                                    <a href="?page=transaksi&aksi=kembali&id=<?php echo $data['id']; ?>&judul=<?php echo $data['judul']; ?>" class="btn btn-info">Kembali</a>
+                                    <a href="?page=transaksi&aksi=perpanjang&id=<?php echo $data['id']; ?>" class="btn btn-warning">Perpanjang</a>
                                 </td>
                             </tr>
                             <?php } ?>
@@ -77,3 +87,6 @@
         </div>
     </div>
 </div>
+<?php
+}
+?>

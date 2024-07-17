@@ -3,7 +3,7 @@
         <!-- Advanced Tables -->
         <div class="panel panel-default">
             <div class="panel-heading">
-                Data Anggota 
+                Data Anggota
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
@@ -33,8 +33,7 @@
 
                             if ($sql->num_rows > 0) {
                                 while ($data = $sql->fetch_assoc()) {
-                                    $jk = ($data['jk'] == 'l') ? "Perempuan" : "Laki-laki";
-
+                                    $jk = ($data['jk'] == 'l') ? "Laki-laki" : "Perempuan";
                             ?>
                                     <tr>
                                         <td><?php echo $no++; ?></td>

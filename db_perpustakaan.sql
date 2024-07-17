@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2024 at 05:49 AM
+-- Generation Time: Jun 08, 2024 at 03:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -43,8 +43,17 @@ CREATE TABLE `tb_anggota` (
 --
 
 INSERT INTO `tb_anggota` (`id`, `nim`, `nama`, `tempat_lahir`, `tgl_lahir`, `jk`, `kelas`, `tgl_input`) VALUES
-(1, '21.11.3838', 'Tegar Wirawan', 'yuhu', '2024-06-29', '', 'if1', '2024-06-01 01:32:04'),
-(2, '21.11.3834', 'riski', 'Godean City', '2024-06-04', '', 'if1', '2024-06-01 01:52:29');
+(1, '21.11.3838', 'Tegar Wirawan', 'yuhu', '2024-06-29', 'Laki-laki', 'if1', '2024-06-01 01:32:04'),
+(2, '21.11.3834', 'riski', 'Godean City', '2024-06-04', 'Laki-laki', 'if1', '2024-06-01 01:52:29'),
+(3, '21.11.3849', 'Yusrizal', 'Gedangsari', '2003-04-13', 'Laki-laki', 'if1', '2024-06-03 02:42:45'),
+(4, '21.11.3888', 'oke', 'yo', '2024-06-12', 'Laki-laki', 'if6', '2024-06-03 02:54:31'),
+(5, '21.11.3835', 'christa', 'Kulon Progo', '2024-06-03', '', 'if1', '2024-06-06 02:17:52'),
+(6, '21.11.3838', 'Tegar', 'yuhuuu', '2024-06-28', '', 'if1', '2024-06-06 03:39:10'),
+(7, '21.11.1111', 'up', 'oke', '2024-06-18', '', 'if1', '2024-06-06 03:53:32'),
+(8, '21.11.3838', 'O', 'K', '2024-06-02', '', 'if1', '2024-06-06 04:05:11'),
+(9, '21.11.3835', 'Y', 'O', '2024-06-17', '', 'if1', '2024-06-06 04:06:50'),
+(10, '21.11.3888', 'MUMET', 'NDASE', '2024-06-21', '', 'if1', '2024-06-06 04:08:41'),
+(11, '', 'user', 'Kulon Progo', '2024-06-26', '', 'if1', '2024-06-06 04:11:53');
 
 -- --------------------------------------------------------
 
@@ -69,10 +78,10 @@ CREATE TABLE `tb_buku` (
 --
 
 INSERT INTO `tb_buku` (`id_buku`, `judul`, `pengarang`, `penerbit`, `tahun_terbit`, `isbn`, `jumlah_buku`, `lokasi`, `tgl_input`) VALUES
-(27, 'Bahasa Indonesia 1', 'Nurul Akhma', 'Erlangga', '2008', '1234556', 2, 'Rak 20', '2024-06-01 02:13:53'),
-(28, 'Manusia Bersifat Serigala', 'Parjoniteni', 'Akamsi nesia', '2004', '190212817', 4, 'Rak 2', '2024-05-30 12:23:40'),
-(29, 'Home Sweet Loan', 'Almira Bastari', 'Gramedia', '2022', '012762524', 2, 'Rak 2', '2024-05-30 12:11:47'),
-(30, 'Mantappu Jiwa', 'Jerome Polin SIjabat', 'Gramedia', '2022', '-', 6, 'Rak 1', '2024-05-30 12:23:21'),
+(27, 'Bahasa Indonesia 1', 'Nurul Akhma', 'Erlangga', '2008', '1234556', 2, 'Rak 20', '2024-06-06 03:28:29'),
+(28, 'Manusia Bersifat Serigala', 'Parjoniteni', 'Akamsi nesia', '2004', '190212817', 4, 'Rak 2', '2024-06-06 02:59:42'),
+(29, 'Home Sweet Loan', 'Almira Bastari', 'Gramedia', '2022', '012762524', 2, 'Rak 2', '2024-06-06 03:28:32'),
+(30, 'Mantappu Jiwa', 'Jerome Polin SIjabat', 'Gramedia', '2022', '-', 6, 'Rak 1', '2024-06-06 02:35:02'),
 (31, 'Dear Tomorrow', 'Maudy Ayunda', 'Gramedia', '2018', '2973910', 3, 'Rak 5', '2024-05-30 12:25:24');
 
 -- --------------------------------------------------------
@@ -91,7 +100,7 @@ CREATE TABLE `tb_lokasi` (
 --
 
 INSERT INTO `tb_lokasi` (`id_lokasi`, `lokasi`) VALUES
-(4, 'Rak 20'),
+(4, 'Rak 2'),
 (7, 'Rak 4'),
 (8, 'Rak 1'),
 (9, 'Rak 3'),
@@ -120,7 +129,7 @@ CREATE TABLE `tb_transaksi` (
 --
 
 INSERT INTO `tb_transaksi` (`id`, `id_buku`, `judul`, `nim`, `nama`, `tgl_pinjam`, `tgl_kembali`, `status`, `tgl_input`) VALUES
-(381, 28, 'Manusia Bersifat Serigala', 214748, 'fajar kamis', '29-05-2024', '29-05-2025', 'Pinjam', '2024-05-29 07:11:57'),
+(381, 28, 'Manusia Bersifat Serigala', 214748, 'fajar kamis', '29-05-2024', '07-06-2024', 'Pinjam', '2024-06-06 03:28:00'),
 (380, 27, 'Bahasa Indonesia', 21118888, 'kapalselam', '29-05-2024', '29-05-2025', 'Pinjam', '2024-05-29 06:59:33');
 
 -- --------------------------------------------------------
@@ -193,7 +202,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_anggota`
 --
 ALTER TABLE `tb_anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_buku`
@@ -211,7 +220,7 @@ ALTER TABLE `tb_lokasi`
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=382;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=387;
 
 --
 -- AUTO_INCREMENT for table `tb_user`

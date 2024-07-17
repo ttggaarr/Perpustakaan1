@@ -1,0 +1,255 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://map tembus level 1.tres" type="TileSet" id=1]
+[ext_resource path="res://Hero 1.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/06-Hit/Hit 04.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/06-Hit/Hit 02.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 04.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 05.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 02.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 01.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/06-Hit/Hit 03.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 06.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 01.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/06-Hit/Hit 01.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/02-Run/Run 03.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 03.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/03-Jump/Jump 02.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png" type="Texture" id=21]
+[ext_resource path="res://level 1.gd" type="Script" id=22]
+[ext_resource path="res://map level 1.tres" type="TileSet" id=23]
+[ext_resource path="res://Assets/Palm Tree Island/Background/BG Image.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Palm Tree Island/Background/Additional Water.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Palm Tree Island/Background/Additional Sky.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Palm Tree Island/Background/Big Clouds.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Palm Tree Island/Background/Small Cloud 1.png" type="Texture" id=28]
+[ext_resource path="res://coins.tscn" type="PackedScene" id=29]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 78, 10 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "lari_cepat",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 3 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Diam",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "lompat",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "lari",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": false,
+"name": "jatuh",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "terluka",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 13.4072 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 566, 28 )
+
+[node name="level 1" type="Node2D"]
+position = Vector2( 1, 0 )
+script = ExtResource( 22 )
+
+[node name="TileMap padat" type="TileMap" parent="."]
+tile_set = ExtResource( 23 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -65538, 4, 0, -65537, 4, 0, -131072, 4, 0, -131071, 4, 0, -131070, 4, 0, -131069, 4, 0, -131068, 4, 0, -131067, 4, 0, -131066, 4, 0, -131065, 4, 0, -131064, 4, 0, -131063, 4, 0, -131062, 4, 0, -131061, 4, 0, -131060, 4, 0, -131059, 4, 0, -131058, 4, 0, -131057, 4, 0, -131056, 4, 0, -131055, 4, 0, -131054, 4, 0, -131053, 4, 0, -131052, 4, 0, -131051, 4, 0, -131050, 4, 0, -131049, 4, 0, -131048, 4, 0, -131047, 4, 0, -131046, 4, 0, -131045, 4, 0, -131044, 4, 0, -131043, 4, 0, -131042, 4, 0, -131041, 4, 0, -131040, 4, 0, -131039, 4, 0, -131038, 4, 0, -131037, 4, 0, -131036, 4, 0, -131035, 4, 0, -131034, 4, 0, -131033, 4, 0, -131032, 4, 0, -131031, 4, 0, -131030, 4, 0, -131029, 4, 0, -131028, 4, 0, -131027, 4, 0, -131026, 4, 0, -131025, 4, 0, -131024, 4, 0, -131023, 4, 0, -131022, 4, 0, -131021, 4, 0, -131020, 4, 0, -131019, 4, 0, -131018, 4, 0, -131017, 4, 0, -131016, 4, 0, -131015, 4, 0, -131014, 4, 0, -131013, 4, 0, -131012, 4, 0, -131011, 4, 0, -131010, 4, 0, -131009, 4, 0, -131008, 4, 0, -131007, 4, 0, -131006, 4, 0, -131005, 4, 0, -131004, 4, 0, -131003, 4, 0, -131002, 4, 0, -131001, 4, 0, -131000, 4, 0, -130999, 4, 0, -130998, 4, 0, -2, 4, 0, -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, -65517, 4, 0, -65516, 4, 0, -65515, 4, 0, -65514, 4, 0, -65513, 4, 0, -65512, 4, 0, -65511, 4, 0, -65510, 4, 0, -65509, 4, 0, -65508, 4, 0, -65507, 4, 0, -65506, 4, 0, -65505, 4, 0, -65504, 4, 0, -65503, 4, 0, -65502, 4, 0, -65501, 4, 0, -65500, 4, 0, -65499, 4, 0, -65498, 4, 0, -65497, 4, 0, -65496, 4, 0, -65495, 4, 0, -65494, 4, 0, -65493, 4, 0, -65492, 4, 0, -65491, 4, 0, -65490, 4, 0, -65489, 4, 0, -65488, 4, 0, -65487, 4, 0, -65486, 4, 0, -65485, 4, 0, -65484, 4, 0, -65483, 4, 0, -65482, 4, 0, -65481, 4, 0, -65480, 4, 0, -65479, 4, 0, -65478, 4, 0, -65477, 4, 0, -65476, 4, 0, -65475, 4, 0, -65474, 4, 0, -65473, 4, 0, -65472, 4, 0, -65471, 4, 0, -65470, 4, 0, -65469, 4, 0, -65468, 4, 0, -65467, 4, 0, -65466, 4, 0, -65465, 4, 0, -65464, 4, 0, -65463, 4, 0, -65462, 4, 0, 65534, 4, 0, 65535, 4, 0, 0, 12, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 11, 7, 0, 12, 7, 0, 13, 7, 0, 14, 7, 0, 15, 7, 0, 16, 7, 0, 17, 7, 0, 18, 13, 0, 19, 7, 0, 20, 7, 0, 21, 7, 0, 22, 7, 0, 23, 7, 0, 24, 7, 0, 25, 7, 0, 26, 7, 0, 27, 7, 0, 28, 7, 0, 29, 7, 0, 30, 7, 0, 31, 7, 0, 32, 7, 0, 33, 7, 0, 34, 7, 0, 35, 7, 0, 36, 7, 0, 37, 7, 0, 38, 7, 0, 39, 7, 0, 40, 7, 0, 41, 7, 0, 42, 7, 0, 43, 7, 0, 44, 7, 0, 45, 7, 0, 46, 7, 0, 47, 7, 0, 48, 7, 0, 49, 7, 0, 50, 7, 0, 51, 7, 0, 52, 7, 0, 53, 7, 0, 54, 7, 0, 55, 7, 0, 56, 7, 0, 57, 7, 0, 58, 7, 0, 59, 7, 0, 60, 7, 0, 61, 7, 0, 62, 4, 0, 63, 4, 0, 64, 4, 0, 65, 4, 0, 66, 3, 0, 131070, 4, 0, 131071, 4, 0, 65536, 3, 0, 65554, 5, 0, 65602, 3, 0, 196606, 4, 0, 196607, 4, 0, 131072, 3, 0, 131090, 5, 0, 131138, 3, 0, 262142, 4, 0, 262143, 4, 0, 196608, 3, 0, 196623, 30, 0, 196626, 6, 0, 196627, 28, 0, 196628, 28, 0, 196629, 28, 0, 196630, 29, 0, 196634, 30, 0, 196647, 27, 0, 196648, 28, 0, 196649, 28, 0, 196650, 28, 0, 196651, 29, 0, 196666, 27, 0, 196667, 29, 0, 196671, 28, 0, 196672, 28, 0, 196673, 28, 0, 196674, 46, 0, 327678, 4, 0, 327679, 4, 0, 262144, 3, 0, 262152, 27, 0, 262153, 28, 0, 262154, 28, 0, 262155, 29, 0, 262176, 27, 0, 262177, 28, 0, 262178, 28, 0, 262179, 28, 0, 262180, 29, 0, 262197, 0, 0, 262198, 1, 0, 262199, 1, 0, 262200, 2, 0, 393214, 4, 0, 393215, 4, 0, 327680, 3, 0, 327704, 30, 0, 327728, 0, 0, 327729, 1, 0, 327730, 1, 0, 327731, 1, 0, 327732, 1, 0, 327733, 15, 0, 327734, 4, 0, 327735, 4, 0, 327736, 3, 0, 458750, 4, 0, 458751, 4, 0, 393216, 3, 0, 393257, 30, 0, 393262, 0, 0, 393263, 1, 0, 393264, 15, 0, 393265, 4, 0, 393266, 4, 0, 393267, 4, 0, 393268, 4, 0, 393269, 4, 0, 393270, 4, 0, 393271, 4, 0, 393272, 3, 0, 393276, 30, 0, 393279, 0, 0, 393280, 1, 0, 393281, 1, 0, 393282, 1, 0, 393283, 1, 0, 524286, 4, 0, 524287, 4, 0, 458752, 14, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 2, 0, 458767, 0, 0, 458768, 1, 0, 458769, 1, 0, 458770, 1, 0, 458771, 1, 0, 458772, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 1, 0, 458776, 1, 0, 458777, 1, 0, 458778, 1, 0, 458779, 1, 0, 458780, 1, 0, 458781, 1, 0, 458782, 1, 0, 458783, 1, 0, 458784, 1, 0, 458785, 1, 0, 458786, 1, 0, 458787, 1, 0, 458788, 2, 0, 458791, 30, 0, 458795, 27, 0, 458796, 29, 0, 458798, 5, 0, 458799, 4, 0, 458800, 4, 0, 458801, 4, 0, 458802, 4, 0, 458803, 4, 0, 458804, 4, 0, 458805, 4, 0, 458806, 4, 0, 458807, 4, 0, 458808, 3, 0, 458810, 30, 0, 458814, 30, 0, 458815, 5, 0, 458816, 4, 0, 458817, 4, 0, 458818, 4, 0, 458819, 4, 0, 589822, 4, 0, 589823, 4, 0, 524288, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 32, 0, 524303, 5, 0, 524304, 4, 0, 524305, 4, 0, 524306, 4, 0, 524307, 4, 0, 524308, 4, 0, 524309, 4, 0, 524310, 4, 0, 524311, 4, 0, 524312, 4, 0, 524313, 4, 0, 524314, 4, 0, 524315, 4, 0, 524316, 4, 0, 524317, 4, 0, 524318, 4, 0, 524319, 4, 0, 524320, 4, 0, 524321, 4, 0, 524322, 4, 0, 524323, 4, 0, 524324, 3, 0, 524334, 5, 0, 524335, 4, 0, 524336, 4, 0, 524337, 4, 0, 524338, 4, 0, 524339, 4, 0, 524340, 4, 0, 524341, 4, 0, 524342, 4, 0, 524343, 4, 0, 524344, 3, 0, 524351, 5, 0, 524352, 4, 0, 524353, 4, 0, 524354, 4, 0, 524355, 4, 0, 655358, 4, 0, 655359, 4, 0, 589824, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 32, 0, 589839, 31, 0, 589840, 4, 0, 589841, 4, 0, 589842, 4, 0, 589843, 4, 0, 589844, 4, 0, 589845, 4, 0, 589846, 4, 0, 589847, 4, 0, 589848, 4, 0, 589849, 4, 0, 589850, 4, 0, 589851, 4, 0, 589852, 4, 0, 589853, 4, 0, 589854, 4, 0, 589855, 4, 0, 589856, 4, 0, 589857, 4, 0, 589858, 4, 0, 589859, 4, 0, 589860, 14, 0, 589870, 15, 0, 589871, 4, 0, 589872, 4, 0, 589873, 4, 0, 589874, 4, 0, 589875, 4, 0, 589876, 4, 0, 589877, 4, 0, 589878, 4, 0, 589879, 4, 0, 589880, 3, 0, 589887, 5, 0, 589888, 4, 0, 589889, 4, 0, 589890, 4, 0, 589891, 4, 0 )
+
+[node name="TileMap tembus" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 262162, 1, 0, 262163, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 327698, 10, 0, 327699, 4, 0, 327700, 4, 0, 327701, 4, 0, 327702, 10, 0, 393234, 10, 0, 393235, 4, 0, 393236, 4, 0, 393237, 4, 0, 393238, 10, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap tembus"]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap tembus/StaticBody2D"]
+position = Vector2( 655, 140 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Hero 1" type="KinematicBody2D" parent="."]
+position = Vector2( 67.4083, 65.4072 )
+collision_mask = 30
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Hero 1"]
+frames = SubResource( 2 )
+animation = "lari_cepat"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hero 1"]
+position = Vector2( 0.591721, -1.40715 )
+shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="Hero 1"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 2150
+limit_bottom = 311
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.3
+drag_margin_top = 0.4
+drag_margin_right = 0.3
+drag_margin_bottom = 0.4
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Timer" type="Timer" parent="Hero 1"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Zona_Jatuh" type="Area2D" parent="."]
+position = Vector2( 593, 352 )
+collision_layer = 16
+collision_mask = 5
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_Jatuh"]
+shape = SubResource( 4 )
+
+[node name="Zona_Jatuh2" type="Area2D" parent="."]
+position = Vector2( 1729, 352 )
+collision_layer = 16
+collision_mask = 5
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_Jatuh2"]
+shape = SubResource( 4 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="langit" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/langit"]
+position = Vector2( 25, 152 )
+scale = Vector2( 2.68229, 1 )
+texture = ExtResource( 24 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/langit"]
+scale = Vector2( 32.9375, 4.875 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/langit"]
+position = Vector2( -8, 236 )
+scale = Vector2( 33.25, 2.375 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/langit"]
+position = Vector2( 876, 232 )
+scale = Vector2( 33.25, 2.375 )
+texture = ExtResource( 25 )
+centered = false
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/langit"]
+position = Vector2( 1054, 8 )
+scale = Vector2( 32.9375, 4.875 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/langit"]
+position = Vector2( 1054, 152 )
+scale = Vector2( 2.68229, 1 )
+texture = ExtResource( 24 )
+centered = false
+
+[node name="Awan" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 1, 1, 1, 0.462745 )
+motion_scale = Vector2( 0.5, 0.5 )
+motion_offset = Vector2( 0, -81 )
+motion_mirroring = Vector2( 448, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Awan"]
+position = Vector2( 32, 96 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="Awan1" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Awan1"]
+position = Vector2( 226, 68 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/Awan1"]
+position = Vector2( 88, 68 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/Awan1"]
+position = Vector2( 432, 68 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/Awan1"]
+position = Vector2( 612, 56 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="GrupCoins" type="Node2D" parent="."]
+
+[node name="coins2D" parent="GrupCoins" instance=ExtResource( 29 )]
+position = Vector2( 233, 100 )
+
+[node name="coins2D3" parent="GrupCoins" instance=ExtResource( 29 )]
+position = Vector2( 313, 100 )
+
+[node name="coins2D2" parent="GrupCoins" instance=ExtResource( 29 )]
+position = Vector2( 279, 100 )
+
+[node name="coins2D4" parent="GrupCoins" instance=ExtResource( 29 )]
+position = Vector2( 453, 72 )
+
+[node name="coins2D5" parent="GrupCoins" instance=ExtResource( 29 )]
+position = Vector2( 597, 68 )
+
+[node name="coins2D6" parent="GrupCoins" instance=ExtResource( 29 )]
+position = Vector2( 637, 68 )
+
+[node name="coins2D7" parent="GrupCoins" instance=ExtResource( 29 )]
+position = Vector2( 803, 68 )
+[connection signal="timeout" from="Hero 1/Timer" to="Hero 1" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Zona_Jatuh" to="." method="_on_Zona_Jatuh_body_entered"]
+[connection signal="body_entered" from="Zona_Jatuh2" to="." method="_on_Zona_Jatuh_body_entered"]

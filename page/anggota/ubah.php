@@ -1,14 +1,14 @@
 <?php
-    $nim = isset($_GET['id']) ? $_GET['id'] : null;
-    $tampil = null; // Inisialisasi variabel $tampil
-    if ($nim) {
-        $sql = $koneksi->query("SELECT * FROM tb_anggota WHERE nim = '$nim'");
-        if ($sql->num_rows > 0) {
-            $tampil = $sql->fetch_assoc();
-            $jkl = $tampil['jk'];
-            $kelas = $tampil['kelas'];
-        }
+$nim = isset($_GET['id']) ? $_GET['id'] : null;
+$tampil = null; // Inisialisasi variabel $tampil
+if ($nim) {
+    $sql = $koneksi->query("SELECT * FROM tb_anggota WHERE nim = '$nim'");
+    if ($sql->num_rows > 0) {
+        $tampil = $sql->fetch_assoc();
+        $jkl = $tampil['jk'];
+        $kelas = $tampil['kelas'];
     }
+}
 ?>
 
 <div class="panel panel-default">
@@ -38,11 +38,12 @@
                     <div class="form-group">
                         <label>Jenis Kelamin</label><br/>
                         <label class="radio-inline">
-                            <input type="radio" value="l" name="jk" <?php echo ($tampil && $jkl == 'l') ? "checked" : ""; ?>/> Laki-laki
+                            <input type="radio" value="l" name="jk" <?php echo ($tampil && $tampil['jk'] == 'l') ? "checked" : ""; ?>/> Laki-laki
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" value="p" name="jk" <?php echo ($tampil && $jkl == 'p') ? "checked" : ""; ?>/> Perempuan
+                            <input type="radio" value="p" name="jk" <?php echo ($tampil && $tampil['jk'] == 'p') ? "checked" : ""; ?>/> Perempuan
                         </label>
+                    </div>
                     </div>
                     <div class="form-group">
                         <label>Kelas</label>
@@ -65,22 +66,22 @@
 </div>
 
 <?php
-    if (isset($_POST['simpan'])) {
-        $nim = $_POST['nim'];
-        $nama = $_POST['nama'];
-        $tmpt_lahir = $_POST['tmpt_lahir'];
-        $tgl_lahir = $_POST['tgl_lahir'];
-        $jk = $_POST['jk'];
-        $kelas = $_POST['kelas'];
+if (isset($_POST['simpan'])) {
+    $nim = $_POST['nim'];
+    $nama = $_POST['nama'];
+    $tmpt_lahir = $_POST['tmpt_lahir'];
+    $tgl_lahir = $_POST['tgl_lahir'];
+    $jk = $_POST['jk'];
+    $kelas = $_POST['kelas'];
 
-        $sql = $koneksi->query("UPDATE tb_anggota SET nama='$nama', tempat_lahir='$tmpt_lahir', tgl_lahir='$tgl_lahir', jk='$jk', kelas='$kelas' WHERE nim='$nim'");
-        if ($sql) {
-            ?>
-            <script type="text/javascript">
-                alert("Data Berhasil Diubah");
-                window.location.href = "?page=anggota";
-            </script>
-            <?php
-        }
+    $sql = $koneksi->query("UPDATE tb_anggota SET nama='$nama', tempat_lahir='$tmpt_lahir', tgl_lahir='$tgl_lahir', jk='$jk', kelas='$kelas' WHERE nim='$nim'");
+    if ($sql) {
+        ?>
+        <script type="text/javascript">
+            alert("Data Berhasil Diubah");
+            window.location.href = "?page=anggota";
+        </script>
+        <?php
     }
+}
 ?>
